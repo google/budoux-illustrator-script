@@ -1,0 +1,35 @@
+{
+  "name": "budoux-illustrator-script",
+  "version": "0.0.1",
+  "description": "The Adobe Illustrator script to apply BudouX to text frames",
+  "author": "Shuhei Iitsuka",
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run build",
+    "pretest": "npm run build",
+    "posttest": "npm run lint",
+    "bundle": "npm run bundle:ja & npm run bundle:zh-hans & npm run bundle:zh-hant",
+    "bundle:ja": "esbuild build/src/budoux-ja.js --charset=utf8 --format=esm --bundle --outfile=dist/BudouXJapanese.js",
+    "bundle:zh-hans": "esbuild build/src/budoux-zh-hans.js --charset=utf8 --format=esm --bundle --outfile=dist/BudouXSimplifiedChinese.js",
+    "bundle:zh-hant": "esbuild build/src/budoux-zh-hant.js --charset=utf8 --format=esm --bundle --outfile=dist/BudouXTraditionalChinese.js",
+    "build": "npm run compile && npm run bundle",
+    "zip": "zip BudouXIllustratorScript -r dist",
+    "test": "jasmine build/test/*.test.js"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^4.3.1",
+    "@types/node": "^14.11.2",
+    "esbuild": "^0.16.17",
+    "gts": "^3.1.1",
+    "jasmine": "^4.5.0",
+    "typescript": "~4.7.0"
+  },
+  "dependencies": {
+    "budoux": "^0.4.1"
+  }
+}
