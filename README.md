@@ -5,7 +5,7 @@ This script applies [BudouX](https://github.com/google/budoux/) to text frames i
 ![Demo](demo.gif)
 
 ## How to use
-1. Download the JavaScript file for your language from the latest release.
+1. Download the JavaScript file for your language from the [latest release](https://github.com/google/budoux-illustrator-script/releases/).
 1. Open Adobe Illustrator.
 1. Select a text frame you want to apply BudouX.
 1. Go to File > Scripts > Other Script... and select the downloaded script file.
